@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart } from './components';
+import { Products, Navbar, Cart, Checkout } from './components';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -63,6 +63,9 @@ const App = () => {
               handleEmptyCart={handleEmptyCart}
             />
           </Route>
+          <Route exact path="/checkout">
+            <Checkout cart={cart} />
+          </Route>
         </Switch>
       </div>
     </Router>
@@ -71,4 +74,4 @@ const App = () => {
 
 export default App;
 
-//https://youtu.be/377AQ0y6LPA?list=PLrOYMtcuZ2u_UOizYJIJvoI4EVGbbsMgv&t=5356
+//https://youtu.be/377AQ0y6LPA?list=PLrOYMtcuZ2u_UOizYJIJvoI4EVGbbsMgv&t=9754
