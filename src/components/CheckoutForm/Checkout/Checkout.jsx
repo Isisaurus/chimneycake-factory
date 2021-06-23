@@ -19,7 +19,7 @@ import { commerce } from '../../../lib/commerce';
 
 const steps = ['Shipping address', 'Payment details'];
 
-const Checkout = ({ cart }) => {
+const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
@@ -40,8 +40,8 @@ const Checkout = ({ cart }) => {
     generateToken();
   }, [cart]);
 
-  const nextStep = () => setActiveStep((prevState) => prevState++);
-  const backStep = () => setActiveStep((prevState) => prevState--);
+  const nextStep = () => setActiveStep((prevState) => prevState + 1);
+  const backStep = () => setActiveStep((prevState) => prevState - 1);
 
   const next = (data) => {
     setShippingData(data);
@@ -53,7 +53,13 @@ const Checkout = ({ cart }) => {
     activeStep === 0 ? (
       <AddressForm checkoutToken={checkoutToken} next={next} />
     ) : (
-      <PaymentForm shippingData={shippingData} />
+      <PaymentForm
+        shippingData={shippingData}
+        checkoutToken={checkoutToken}
+        backStep={backStep}
+        nextStep={nextStep}
+        onCaptureCheckout={onCaptureCheckout}
+      />
     );
   return (
     <>

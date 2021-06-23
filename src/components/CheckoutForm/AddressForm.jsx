@@ -91,6 +91,7 @@ const AddressForm = ({ checkoutToken, next }) => {
   }, [shippingSubdivision]);
 
   const methods = useForm();
+
   if (!checkoutToken) return 'Loading...';
   return (
     <>
