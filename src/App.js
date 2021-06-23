@@ -8,7 +8,7 @@ const App = () => {
   const [products, setProducts] = useState();
   const [cart, setCart] = useState();
   const [order, setOrder] = useState({});
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState();
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -54,10 +54,11 @@ const App = () => {
         checkoutTokenId,
         newOrder
       );
-      setOrder(newOrder);
+      setOrder(incomingOrder);
 
       refreshCart();
     } catch (err) {
+      console.log(err);
       setErrorMessage(err.data.error.message);
     }
   };

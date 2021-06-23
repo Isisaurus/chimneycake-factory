@@ -88,6 +88,7 @@ const AddressForm = ({ checkoutToken, next }) => {
         shippingSubdivision
       );
     }
+    // eslint-disable-next-line
   }, [shippingSubdivision]);
 
   const methods = useForm();
