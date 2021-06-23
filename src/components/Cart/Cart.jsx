@@ -15,7 +15,7 @@ const Cart = ({
   const EmptyCart = () => (
     <Typography variant="subtitle1">
       You have no items in your shopping cart.
-      <Link to="/">Let's go shopping!</Link>
+      <Link to="shop">Let's go shopping!</Link>
     </Typography>
   );
 

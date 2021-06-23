@@ -29,7 +29,7 @@ const Navbar = ({ totalItems }) => {
             className={classes.title}
             color="inherit"
             component={Link}
-            to="/"
+            to="shop"
           >
             <img
               src={logo}
@@ -40,7 +40,7 @@ const Navbar = ({ totalItems }) => {
             Commerce.js
           </Typography>
           <div className={classes.grow}></div>
-          {location.pathname === '/' && (
+          {(location.pathname === '/' || location.pathname === '/shop') && (
             <div className={classes.button}>
               <IconButton
                 area-label="Show cart items"
