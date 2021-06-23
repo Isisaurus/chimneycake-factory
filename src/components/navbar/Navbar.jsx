@@ -29,7 +29,7 @@ const Navbar = ({ totalItems }) => {
             className={classes.title}
             color="inherit"
             component={Link}
-            to="shop"
+            to="/shop"
           >
             <img
               src={logo}

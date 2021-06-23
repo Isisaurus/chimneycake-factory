@@ -10,7 +10,7 @@ const ProductDetails = () => {
 
   const getProductById = async (id) => {
     const res = await commerce.products.retrieve(id);
-    console.log(res);
+    // console.log(res);
     // name, description, categories
     // img: media.source
     setProduct(res);
@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     getProductById(id);
-  }, []);
+  }, [id]);
 
   if (!product) return 'Loading...';
 
@@ -29,7 +29,9 @@ const ProductDetails = () => {
       </div>
       <div>
         {product.categories.map((cat) => (
-          <Link to={`/shop/:${cat.slug}`}>{cat.name}</Link>
+          <Link key={cat.slug} to={`/shop/:${cat.slug}`}>
+            {cat.name}
+          </Link>
         ))}
       </div>
     </>
