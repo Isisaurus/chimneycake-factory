@@ -29,8 +29,6 @@ const Products = ({ products, onAddToCart }) => {
     // eslint-disable-next-line
   }, [slug, products]);
 
-  console.log(filteredProducts);
-
   if (!filteredProducts) return 'Loading...';
   return (
     <main className={classes.content}>

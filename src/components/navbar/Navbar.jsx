@@ -49,7 +49,7 @@ const Navbar = ({ totalItems }) => {
             Shop
           </Typography>
           <div className={classes.grow}></div>
-          {(location.pathname === '/' || location.pathname === '/shop') && (
+          {location.pathname !== '/cart' && (
             <div className={classes.button}>
               <IconButton
                 area-label="Show cart items"

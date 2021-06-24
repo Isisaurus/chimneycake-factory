@@ -7,9 +7,20 @@ import {
   Checkout,
   ProductDetails,
   Home,
+  Shop,
 } from './components';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#DFD1B2',
+    },
+  },
+});
 
 const App = () => {
   const [products, setProducts] = useState();
@@ -91,10 +102,10 @@ const App = () => {
             <Home categories={categories} />
           </Route>
           <Route exact path="/shop">
-            <Products products={products} onAddToCart={handleAddToCart} />
+            <Shop products={products} handleAddToCart={handleAddToCart} />
           </Route>
           <Route path="/shop/:slug">
-            <Products products={products} onAddToCart={handleAddToCart} />
+            <Shop products={products} handleAddToCart={handleAddToCart} />
           </Route>
           <Route path="/products/:id">
             <ProductDetails />

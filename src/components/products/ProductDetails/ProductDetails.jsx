@@ -29,7 +29,7 @@ const ProductDetails = () => {
       </div>
       <div>
         {product.categories.map((cat) => (
-          <Link key={cat.slug} to={`/shop/:${cat.slug}`}>
+          <Link key={cat.slug} to={`/shop/${cat.slug}`}>
             {cat.name}
           </Link>
         ))}
