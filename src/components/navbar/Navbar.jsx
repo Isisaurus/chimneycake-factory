@@ -22,14 +22,14 @@ const Navbar = ({ totalItems }) => {
 
   return (
     <>
-      <AppBar position="fixed" className={classes.appBar} color="inherit">
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <Typography
             variant="h6"
             className={classes.title}
             color="inherit"
             component={Link}
-            to="/shop"
+            to="/"
           >
             <img
               src={logo}
@@ -38,6 +38,15 @@ const Navbar = ({ totalItems }) => {
               className={classes.image}
             />
             Commerce.js
+          </Typography>
+          <Typography
+            variant="h6"
+            className={classes.title}
+            color="inherit"
+            component={Link}
+            to="/shop"
+          >
+            Shop
           </Typography>
           <div className={classes.grow}></div>
           {(location.pathname === '/' || location.pathname === '/shop') && (
