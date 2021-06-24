@@ -2,12 +2,15 @@ import React from 'react';
 
 import { Typography, Button, Grid, Container } from '@material-ui/core';
 import CategoryCard from './CategoryCard/CategoryCard';
+import useStyles from './styles';
+import heroImg from './../../assets/hero.jpg';
 
 const Home = ({ categories }) => {
+  const classes = useStyles();
   if (!categories) return 'Loading...';
   return (
     <Container style={{ marginTop: '100px' }} component="main">
-      <Typography variant="h4" component="h1">
+      {/* <Typography variant="h4" component="h1">
         header 1
       </Typography>
       <Typography variant="h2">header 2</Typography>
@@ -29,10 +32,13 @@ const Home = ({ categories }) => {
       </Button>
       <br />
       <br />
-      <br />
-      <Grid container spacing={4}>
+      <br /> */}
+      <Container className={classes.hero}>
+        <img src={heroImg} alt="Chimney Cake" className={classes.hero_img} />
+      </Container>
+      <Grid container spacing={4} className={classes.grid}>
         {categories.map((category) => (
-          <Grid key={category.id} item xs={12} sm={4}>
+          <Grid key={category.id} item xs={12} sm={6} md={4}>
             <CategoryCard category={category} />
           </Grid>
         ))}

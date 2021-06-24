@@ -6,21 +6,23 @@ import useStyles from './styles';
 const CategoryCard = ({ category }) => {
   const classes = useStyles();
   return (
-    <Card
-      className={classes.card}
-      component={Link}
-      to={`/shop/${category.slug}`}
-    >
-      <CardContent className={classes.cardContent}>
+    <Card className={classes.card}>
+      <CardContent
+        className={classes.cardContent}
+        component={Link}
+        to={`/shop/${category.slug}`}
+      >
         {/* <CardMedia /> */}
         <div className={classes.media}></div>
-        <Typography variant="subtitle1" className={classes.title}>
-          {category.name}
-        </Typography>
+        <div className={classes.title}>
+          <Typography variant="subtitle1">{category.name}</Typography>
+        </div>
+        <div>
+          <Typography variant="body2" className={classes.description}>
+            {category.description}
+          </Typography>
+        </div>
       </CardContent>
-      <Typography variant="body2" className={classes.description}>
-        {category.description}
-      </Typography>
     </Card>
   );
 };
