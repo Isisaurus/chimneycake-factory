@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Grid } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
+import { commerce } from './../../lib/commerce';
 
 import Product from './product/Product';
 import useStyles from './styles';
@@ -8,17 +9,34 @@ import useStyles from './styles';
 const Products = ({ products, onAddToCart }) => {
   const classes = useStyles();
 
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
   const { slug } = useParams();
 
-  console.log(slug);
+  const handleCategory = async () => {
+    const res = await commerce.products.list({
+      category_slug: [slug],
+    });
+    setFilteredProducts(res.data);
+  };
 
-  if (!products) return 'Loading...';
+  useEffect(() => {
+    if (slug) {
+      handleCategory();
+    } else if (products) {
+      setFilteredProducts(products);
+    }
+    // eslint-disable-next-line
+  }, [slug, products]);
 
+  console.log(filteredProducts);
+
+  if (!filteredProducts) return 'Loading...';
   return (
     <main className={classes.content}>
       <div className={classes.toolbar}></div>
       <Grid container justify="center" spacing={4}>
-        {products.map((product) => (
+        {filteredProducts.map((product) => (
           <Grid item key={product.id} xs={12} sm={6} lg={3}>
             <Product product={product} onAddToCart={onAddToCart} />
           </Grid>

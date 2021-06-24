@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = ({ categories }) => {
+  if (!categories) return 'Loading...';
   return (
-    <main>
+    <main style={{ marginTop: '200px' }}>
       {categories.map((category) => (
-        <div>
-          <Link to={`/shop/${category.slug}`} key={category.slug}>
-            {category.name}
-          </Link>
-        </div>
+        <Link key={category.id} to={`/shop/${category.slug}`}>
+          {category.name}
+        </Link>
       ))}
     </main>
   );

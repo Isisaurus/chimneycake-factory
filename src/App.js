@@ -82,8 +82,6 @@ const App = () => {
     fetchCategories();
   }, []);
 
-  console.log(categories);
-
   return (
     <Router>
       <div>
