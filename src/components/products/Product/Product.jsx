@@ -19,7 +19,7 @@ const Product = ({ product, onAddToCart }) => {
   return (
     <Card className={classes.root}>
       <Link
-        to={`/shop/${product.id}`}
+        to={`/products/${product.id}`}
         style={{ textDecoration: 'none', color: 'inherit' }}
       >
         <CardMedia

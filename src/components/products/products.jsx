@@ -1,11 +1,16 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import { useParams } from 'react-router-dom';
 
 import Product from './product/Product';
 import useStyles from './styles';
 
 const Products = ({ products, onAddToCart }) => {
   const classes = useStyles();
+
+  const { slug } = useParams();
+
+  console.log(slug);
 
   if (!products) return 'Loading...';
 

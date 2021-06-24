@@ -95,7 +95,10 @@ const App = () => {
           <Route exact path="/shop">
             <Products products={products} onAddToCart={handleAddToCart} />
           </Route>
-          <Route path="/shop/:id">
+          <Route path="/shop/:slug">
+            <Products products={products} onAddToCart={handleAddToCart} />
+          </Route>
+          <Route path="/products/:id">
             <ProductDetails />
           </Route>
           <Route exact path="/cart">
