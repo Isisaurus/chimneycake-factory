@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from './lib/commerce';
 import {
-  Products,
   Navbar,
   Cart,
   Checkout,
@@ -19,6 +18,45 @@ const theme = createMuiTheme({
     primary: {
       main: '#DFD1B2',
     },
+    secondary: {
+      main: '#13181F',
+    },
+    text: {
+      primary: '#13181F',
+      secondary: '#444749',
+    },
+  },
+  typography: {
+    fontFamily: "'Lora', serif",
+    fontSize: 16,
+    fontWeightLight: 400,
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
+    fontWeightBold: 700,
+    h1: {
+      letterSpacing: '0.01em',
+    },
+    h2: {
+      letterSpacing: '0.01em',
+    },
+    h3: {
+      letterSpacing: '0.01em',
+    },
+    h4: {
+      letterSpacing: '0.01em',
+    },
+    h5: {
+      letterSpacing: '0.01em',
+    },
+    h6: {
+      letterSpacing: '0.01em',
+    },
+    button: {
+      letterSpacing: '0.05em',
+    },
+  },
+  shape: {
+    borderRadius: 0,
   },
 });
 
@@ -94,41 +132,43 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <div>
-        <Navbar totalItems={cart ? cart.total_items : 0} />
-        <Switch>
-          <Route exact path="/">
-            <Home categories={categories} />
-          </Route>
-          <Route exact path="/shop">
-            <Shop products={products} handleAddToCart={handleAddToCart} />
-          </Route>
-          <Route path="/shop/:slug">
-            <Shop products={products} handleAddToCart={handleAddToCart} />
-          </Route>
-          <Route path="/products/:id">
-            <ProductDetails />
-          </Route>
-          <Route exact path="/cart">
-            <Cart
-              cart={cart}
-              handleUpdateCartQty={handleUpdateCartQty}
-              handleRemoveFromCart={handleRemoveFromCart}
-              handleEmptyCart={handleEmptyCart}
-            />
-          </Route>
-          <Route exact path="/checkout">
-            <Checkout
-              cart={cart}
-              order={order}
-              onCaptureCheckout={handleCaptureCheckout}
-              error={errorMessage}
-            />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <div>
+          <Navbar totalItems={cart ? cart.total_items : 0} />
+          <Switch>
+            <Route exact path="/">
+              <Home categories={categories} />
+            </Route>
+            <Route exact path="/shop">
+              <Shop products={products} handleAddToCart={handleAddToCart} />
+            </Route>
+            <Route path="/shop/:slug">
+              <Shop products={products} handleAddToCart={handleAddToCart} />
+            </Route>
+            <Route path="/products/:id">
+              <ProductDetails />
+            </Route>
+            <Route exact path="/cart">
+              <Cart
+                cart={cart}
+                handleUpdateCartQty={handleUpdateCartQty}
+                handleRemoveFromCart={handleRemoveFromCart}
+                handleEmptyCart={handleEmptyCart}
+              />
+            </Route>
+            <Route exact path="/checkout">
+              <Checkout
+                cart={cart}
+                order={order}
+                onCaptureCheckout={handleCaptureCheckout}
+                error={errorMessage}
+              />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 };
 
