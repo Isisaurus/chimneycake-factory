@@ -28,6 +28,25 @@ const Navbar = ({ totalItems }) => {
         elevation={0}
         className={classes.appBar}
       >
+        <Toolbar component={Container} className={classes.cartBar}>
+          {location.pathname !== '/cart' && location.pathname !== '/checkout' && (
+            <IconButton
+              area-label="Show cart items"
+              color="inherit"
+              component={Link}
+              to="/cart"
+              className={classes.button}
+            >
+              <Typography variant="button" className={classes.buttonText}>
+                Your Cart
+              </Typography>
+              <Badge badgeContent={totalItems} color="secondary">
+                <ShoppingCart className={classes.buttonIcon}></ShoppingCart>
+              </Badge>
+            </IconButton>
+          )}
+        </Toolbar>
+
         <Toolbar component={Container} className={classes.toolbar}>
           <AppLink
             variant="button"
@@ -70,22 +89,6 @@ const Navbar = ({ totalItems }) => {
           >
             Recipe*
           </AppLink>
-          <div className={classes.grow}></div>
-          {(location.pathname !== '/cart' ||
-            location.pathname !== '/checkout') && (
-            <div className={classes.button}>
-              <IconButton
-                area-label="Show cart items"
-                color="inherit"
-                component={Link}
-                to="/cart"
-              >
-                <Badge badgeContent={totalItems} color="secondary">
-                  <ShoppingCart></ShoppingCart>
-                </Badge>
-              </IconButton>
-            </div>
-          )}
         </Toolbar>
       </AppBar>
     </>

@@ -10,7 +10,7 @@ const Home = ({ categories }) => {
   const classes = useStyles();
   if (!categories) return 'Loading...';
   return (
-    <Container style={{ marginTop: '100px' }} component="main">
+    <Container style={{ marginTop: '3rem' }} component="main">
       {/* <Typography variant="h4" component="h1">
         header 1
       </Typography>

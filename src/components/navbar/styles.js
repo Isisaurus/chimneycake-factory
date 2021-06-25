@@ -5,71 +5,76 @@ const drawerWidth = 0;
 export default makeStyles((theme) => ({
   appBar: {
     boxShadow: 'none',
-    padding: '1rem 0',
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
+    padding: '0',
     color: 'inherit',
     background: 'none',
   },
+  cartBar: {
+    oxShadow: 'none',
+    margin: '0 auto',
+    padding: 0,
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center',
+    },
+  },
   toolbar: {
     padding: '.5rem 0',
-    borderTop: '3px solid rgba(0, 0, 0, 0.12)',
+    borderTop: '3px solid rgba(223,209,178, .8)',
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 0',
+      textAlign: 'center',
+      justifyContent: 'center',
+    },
   },
   link: {
     padding: '.5rem 1.5rem',
+    paddingBottom: '1rem',
     textDecoration: 'none',
-    '&hover': {
+    borderBottom: '3px solid transparent',
+
+    '&:hover': {
       textDecoration: 'none',
+      borderBottom: '3px solid rgba(223,209,178, .8)',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '12px',
+      padding: '.5rem .8rem',
     },
   },
   active: {
-    backgroundColor: 'purple',
+    borderBottom: '3px solid rgba(223,209,178, .8)',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-  grow: {
-    flexGrow: 1,
-  },
-  search: {
-    position: 'relative',
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: 0,
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: 'auto',
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
+  button: {
+    borderRadius: '0',
     height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    padding: '.8em 1.5em .5em',
+    margin: '0',
+    '&:hover': {
+      background: 'rgba(223, 209, 178, 0.8)',
+    },
+    [theme.breakpoints.down('xs')]: {
+      flex: 1,
+    },
   },
-  inputRoot: {
-    color: 'inherit',
+  buttonText: {
+    marginRight: '1em',
+    fontSize: '1rem ',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
   },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
+  buttonIcon: {
+    height: '1.5rem',
+    [theme.breakpoints.down('sm')]: {
+      height: '1.2rem',
     },
   },
 }));
