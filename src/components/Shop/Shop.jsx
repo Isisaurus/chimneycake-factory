@@ -1,12 +1,16 @@
 import React from 'react';
 import { Products } from './../../components';
+import CategoryBar from './CategoryBar/CategoryBar';
+import { Container } from '@material-ui/core';
+import { Hero } from './../index';
 
-const Shop = ({ products, handleAddToCart }) => {
+const Shop = ({ products, handleAddToCart, categories }) => {
   return (
-    <main style={{ marginTop: '200px' }}>
-      <p>This is shop</p>
+    <Container component="main">
+      <Hero />
+      <CategoryBar categories={categories} />
       <Products products={products} onAddToCart={handleAddToCart} />
-    </main>
+    </Container>
   );
 };
 

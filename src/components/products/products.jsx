@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Container } from '@material-ui/core';
 import { useParams } from 'react-router-dom';
 import { commerce } from './../../lib/commerce';
 
@@ -31,7 +31,7 @@ const Products = ({ products, onAddToCart }) => {
 
   if (!filteredProducts) return 'Loading...';
   return (
-    <main className={classes.content}>
+    <Container className={classes.content}>
       <div className={classes.toolbar}></div>
       <Grid container justify="center" spacing={4}>
         {filteredProducts.map((product) => (
@@ -40,7 +40,7 @@ const Products = ({ products, onAddToCart }) => {
           </Grid>
         ))}
       </Grid>
-    </main>
+    </Container>
   );
 };
 

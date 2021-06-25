@@ -142,10 +142,18 @@ const App = () => {
               <Home categories={categories} />
             </Route>
             <Route exact path="/shop">
-              <Shop products={products} handleAddToCart={handleAddToCart} />
+              <Shop
+                products={products}
+                handleAddToCart={handleAddToCart}
+                categories={categories}
+              />
             </Route>
             <Route exact path="/shop/:slug">
-              <Shop products={products} handleAddToCart={handleAddToCart} />
+              <Shop
+                products={products}
+                handleAddToCart={handleAddToCart}
+                categories={categories}
+              />
             </Route>
             <Route exact path="/products/:id">
               <ProductDetails />
