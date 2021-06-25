@@ -143,10 +143,10 @@ const App = () => {
             <Route exact path="/shop">
               <Shop products={products} handleAddToCart={handleAddToCart} />
             </Route>
-            <Route path="/shop/:slug">
+            <Route exact path="/shop/:slug">
               <Shop products={products} handleAddToCart={handleAddToCart} />
             </Route>
-            <Route path="/products/:id">
+            <Route exact path="/products/:id">
               <ProductDetails />
             </Route>
             <Route exact path="/cart">

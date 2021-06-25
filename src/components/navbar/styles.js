@@ -5,21 +5,27 @@ const drawerWidth = 0;
 export default makeStyles((theme) => ({
   appBar: {
     boxShadow: 'none',
-    borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+    padding: '1rem 0',
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
     color: 'inherit',
-    backgroundColor: 'transparent',
+    background: 'none',
   },
-  title: {
-    alignItems: 'center',
-    display: 'flex',
+  toolbar: {
+    padding: '.5rem 0',
+    borderTop: '3px solid rgba(0, 0, 0, 0.12)',
+  },
+  link: {
+    padding: '.5rem 1.5rem',
     textDecoration: 'none',
+    '&hover': {
+      textDecoration: 'none',
+    },
   },
-  image: {
-    marginRight: '10px',
+  active: {
+    backgroundColor: 'purple',
   },
   menuButton: {
     marginRight: theme.spacing(2),
