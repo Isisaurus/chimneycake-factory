@@ -19,10 +19,10 @@ export default makeStyles(() => ({
   media: {
     width: '100%',
     minHeight: '15rem',
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     margin: 0,
     padding: 0,
-    opacity: 0.2,
+    // opacity: 0.2,
   },
   title: {
     backgroundColor: '#dfd1b2',

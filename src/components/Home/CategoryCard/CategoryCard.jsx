@@ -12,8 +12,11 @@ const CategoryCard = ({ category }) => {
         component={Link}
         to={`/shop/${category.slug}`}
       >
-        {/* <CardMedia /> */}
-        <div className={classes.media}></div>
+        <CardMedia
+          image={`/img/category_images/${category.slug}.jpg`}
+          title={category.name}
+          className={classes.media}
+        />
         <div className={classes.title}>
           <Typography variant="subtitle1">{category.name}</Typography>
         </div>
