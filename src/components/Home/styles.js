@@ -12,7 +12,6 @@ export default makeStyles((theme) => ({
   introGrid: {
     position: 'absolute',
     [theme.breakpoints.down('md')]: {
-      width: '100%',
       top: '0',
       right: '0',
       bottom: '0',
@@ -56,7 +55,50 @@ export default makeStyles((theme) => ({
     marginTop: '2.5rem',
   },
   grid: {
+    padding: '0',
     marginTop: '5rem',
     marginBottom: '5rem',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '2rem',
+      marginBottom: '2rem',
+    },
+  },
+  info: {
+    padding: '0 2rem',
+    marginTop: '5rem',
+    marginBottom: '5rem',
+    alignItems: 'flex-start',
+    justifyContent: 'space-around',
+    color: '#444749',
+    [theme.breakpoints.down('sm')]: {
+      padding: '1rem',
+      marginTop: '2rem',
+      marginBottom: '2rem',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+    },
+  },
+  infoItem: {
+    width: '100%',
+  },
+  divider: {
+    background: 'rgba(223,209,178, .8)',
+    width: '3px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  box: {
+    display: 'block',
+    padding: '1em',
+    listStyle: 'none',
+    [theme.breakpoints.down('xs')]: {
+      padding: '0',
+    },
+  },
+  li: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
 }));

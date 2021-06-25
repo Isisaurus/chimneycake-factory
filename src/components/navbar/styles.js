@@ -1,6 +1,4 @@
-import { makeStyles, fade } from '@material-ui/core/styles';
-
-const drawerWidth = 0;
+import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
   appBar: {
@@ -13,7 +11,6 @@ export default makeStyles((theme) => ({
     oxShadow: 'none',
     margin: '0 auto',
     padding: 0,
-    width: '100%',
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
