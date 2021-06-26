@@ -1,5 +1,21 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
-  toolbarSecondary: {},
+  toolbarSecondary: {
+    padding: '0',
+    justifyContent: 'space-between',
+    overflowX: 'auto',
+  },
+  toolbarLink: {
+    textDecoration: 'none',
+    display: 'block',
+    padding: '1em 1.8em',
+    '&:hover': {
+      textDecoration: 'none',
+      background: 'rgba(223, 209, 178, 0.8)',
+    },
+  },
+  activeLink: {
+    background: 'rgba(223, 209, 178, 0.8)',
+  },
 }));

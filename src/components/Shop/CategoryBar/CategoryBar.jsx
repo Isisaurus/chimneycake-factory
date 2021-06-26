@@ -1,29 +1,29 @@
 import React from 'react';
-import { Container, Toolbar } from '@material-ui/core';
+import { Container, Toolbar, Link as LinkEl } from '@material-ui/core';
 import useStyles from './styles.js';
 import { Link } from 'react-router-dom';
 
 const CategoryBar = ({ categories }) => {
   const classes = useStyles();
   return categories ? (
-    <Container>
-      toolbar here
+    <Container style={{ padding: '0' }}>
       <Toolbar
         component="nav"
         variant="dense"
         className={classes.toolbarSecondary}
       >
         {categories.map((category) => (
-          <Link
+          <LinkEl
             color="inherit"
-            noWrap
-            key={category.title}
-            variant="body2"
-            to={`shop/${category.slug}`}
+            component={Link}
+            key={category.id}
+            variant="button"
+            to={`/shop/${category.slug}`}
+            activeClassName={classes.activeLink}
             className={classes.toolbarLink}
           >
             {category.name}
-          </Link>
+          </LinkEl>
         ))}
       </Toolbar>
     </Container>
