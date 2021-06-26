@@ -21,9 +21,9 @@ const Cart = ({
 
   const FilledCart = () => (
     <>
-      <Grid container spacing={3}>
+      <Grid container spacing={3} className={classes.grid}>
         {cart.line_items.map((item) => (
-          <Grid item xs={12} sm={4} key={item.id}>
+          <Grid item xs={12} sm={4} md={3} key={item.id}>
             <CartItem
               item={item}
               onUpdateCartQty={handleUpdateCartQty}
@@ -33,17 +33,18 @@ const Cart = ({
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">
+        <Typography variant="h5" className={classes.total}>
           Subtotal: {cart.subtotal.formatted_with_symbol}
         </Typography>
-        <div>
+        <div className={classes.buttons}>
           <Button
             className={classes.emptyButton}
             size="large"
             type="button"
-            variant="contained"
+            variant="outlined"
             color="secondary"
             onClick={handleEmptyCart}
+            disableElevation
           >
             Empty Cart
           </Button>
@@ -55,6 +56,7 @@ const Cart = ({
             color="primary"
             component={Link}
             to="/checkout"
+            disableElevation
           >
             Checkout
           </Button>
@@ -65,9 +67,8 @@ const Cart = ({
 
   if (!cart) return 'Loading...';
   return (
-    <Container>
-      <div className={classes.toolbar} />
-      <Typography className={classes.title} variant="h3" gutterBottom>
+    <Container style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+      <Typography className={classes.title} variant="h5" gutterBottom>
         Your Shopping Cart
       </Typography>
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
