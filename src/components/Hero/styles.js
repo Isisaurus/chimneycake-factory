@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     padding: '0',
+    marginTop: '2rem',
   },
   logo: {
     maxWidth: '15rem',

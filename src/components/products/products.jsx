@@ -30,10 +30,9 @@ const Products = ({ products, onAddToCart, slug }) => {
   if (!filteredProducts) return 'Loading...';
   return (
     <Container className={classes.content}>
-      <div className={classes.toolbar}></div>
-      <Grid container justify="center" spacing={4}>
+      <Grid container spacing={4} className={classes.grid}>
         {filteredProducts.map((product) => (
-          <Grid item key={product.id} xs={12} sm={6} lg={3}>
+          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
             <Product product={product} onAddToCart={onAddToCart} />
           </Grid>
         ))}

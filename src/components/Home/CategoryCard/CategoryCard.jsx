@@ -21,7 +21,11 @@ const CategoryCard = ({ category }) => {
           <Typography variant="subtitle1">{category.name}</Typography>
         </div>
         <div>
-          <Typography variant="body2" className={classes.description}>
+          <Typography
+            variant="body2"
+            className={classes.description}
+            color="textSecondary"
+          >
             {category.description}
           </Typography>
         </div>

@@ -5,7 +5,7 @@ import {
   CardContent,
   CardActions,
   Typography,
-  IconButton,
+  Button,
 } from '@material-ui/core';
 
 import { AddShoppingCart } from '@material-ui/icons';
@@ -16,6 +16,7 @@ import useStyles from './styles';
 const Product = ({ product, onAddToCart }) => {
   const classes = useStyles();
 
+  // console.log(product.price.formatted_with_symbol);
   return (
     <Card className={classes.root}>
       <Link
@@ -27,32 +28,40 @@ const Product = ({ product, onAddToCart }) => {
           image={product.media.source}
           title={product.name}
         />
-        <CardContent>
-          <div className={classes.cardContent}>
-            <Typography variant="h5" gutterBottom>
-              {product.name}
-            </Typography>
-            <Typography variant="h5">
-              {product.price.formatter_with_symbol}
-            </Typography>
-          </div>
-          <Typography
-            dangerouslySetInnerHTML={{ __html: product.description }}
-            variant="body2"
-            color="textSecondary"
-          />
-        </CardContent>
       </Link>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton
-          aria-label="Add to Cart"
+        <Button
+          variant="contained"
+          color="primary"
+          endIcon={<AddShoppingCart />}
+          className={classes.button}
           onClick={() => {
             onAddToCart(product.id, 1);
           }}
+          disableElevation
         >
-          <AddShoppingCart />
-        </IconButton>
+          <Typography variant="button" style={{ textTransform: 'none' }}>
+            Add to Cart
+          </Typography>
+        </Button>
       </CardActions>
+      <CardContent className={classes.cardContent}>
+        <div className={classes.details}>
+          <Typography variant="subtitle1" style={{ paddingRight: '.3rem' }}>
+            {product.name}{' '}
+          </Typography>
+          <Typography variant="subtitle1">
+            {product.price.formatted_with_symbol}
+          </Typography>
+        </div>
+
+        <Typography
+          dangerouslySetInnerHTML={{ __html: product.description }}
+          variant="body2"
+          color="textSecondary"
+          className={classes.description}
+        />
+      </CardContent>
     </Card>
   );
 };

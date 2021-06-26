@@ -32,7 +32,6 @@ export default makeStyles(() => ({
   },
   description: {
     paddingTop: '1rem',
-    color: '#444749',
     fontWeight: '300',
   },
 }));
