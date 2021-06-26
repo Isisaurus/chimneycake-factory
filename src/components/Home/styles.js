@@ -8,7 +8,6 @@ export default makeStyles((theme) => ({
     maxHeight: '40rem',
     background: `url(${heroImg}) no-repeat center`,
   },
-  hero_img: {},
   introGrid: {
     position: 'absolute',
     [theme.breakpoints.down('md')]: {

@@ -17,7 +17,7 @@ const CategoryBar = ({ categories }) => {
             color="inherit"
             component={Link}
             key={category.id}
-            variant="button"
+            variant="caption"
             to={`/shop/${category.slug}`}
             activeClassName={classes.activeLink}
             className={classes.toolbarLink}
