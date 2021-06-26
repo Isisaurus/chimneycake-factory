@@ -11,12 +11,13 @@ export default makeStyles((theme) => ({
     display: 'block',
     padding: '1em 1.5em',
     whiteSpace: 'nowrap',
+    textTransform: 'capitalize',
     '&:hover': {
       textDecoration: 'none',
-      background: 'rgba(223, 209, 178, 0.8)',
+      background: 'rgba(223, 209, 178, .4)',
     },
   },
-  activeLink: {
-    background: 'rgba(223, 209, 178, 0.8)',
+  active: {
+    textDecoration: 'underline',
   },
 }));

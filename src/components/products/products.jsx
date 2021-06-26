@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Grid, Container } from '@material-ui/core';
-import { useParams } from 'react-router-dom';
+
 import { commerce } from '../../lib/commerce';
 
 import Product from './Product/Product';
 import useStyles from './styles';
 
-const Products = ({ products, onAddToCart }) => {
+const Products = ({ products, onAddToCart, slug }) => {
   const classes = useStyles();
 
   const [filteredProducts, setFilteredProducts] = useState([]);
-
-  const { slug } = useParams();
 
   const handleCategory = async () => {
     const res = await commerce.products.list({
