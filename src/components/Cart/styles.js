@@ -37,5 +37,13 @@ export default makeStyles((theme) => ({
   },
   grid: {
     marginTop: '2.5rem',
+    background: 'rgba(19,24,31, .1)',
+  },
+  emptyMessage: {
+    marginTop: '2.5rem',
+    minHeight: '50vh',
+    [theme.breakpoints.down('sm')]: {
+      textAlign: 'center',
+    },
   },
 }));

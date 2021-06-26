@@ -13,17 +13,27 @@ const Cart = ({
   const classes = useStyles();
 
   const EmptyCart = () => (
-    <Typography variant="subtitle1">
-      You have no items in your shopping cart.
-      <Link to="shop">Let's go shopping!</Link>
-    </Typography>
+    <Container className={classes.emptyMessage}>
+      <Typography variant="subtitle1" color="textSecondary">
+        You have no items in your shopping cart.
+      </Typography>
+      <Button
+        component={Link}
+        to="/shop"
+        color="secondary"
+        variant="outlined"
+        style={{ marginTop: '1.5rem' }}
+      >
+        <Typography variant="subtitle1">Shop Now</Typography>
+      </Button>
+    </Container>
   );
 
   const FilledCart = () => (
     <>
       <Grid container spacing={3} className={classes.grid}>
         {cart.line_items.map((item) => (
-          <Grid item xs={12} sm={4} md={3} key={item.id}>
+          <Grid item xs={12} sm={6} md={4} key={item.id}>
             <CartItem
               item={item}
               onUpdateCartQty={handleUpdateCartQty}
@@ -39,7 +49,6 @@ const Cart = ({
         <div className={classes.buttons}>
           <Button
             className={classes.emptyButton}
-            size="large"
             type="button"
             variant="outlined"
             color="secondary"
@@ -50,7 +59,6 @@ const Cart = ({
           </Button>
           <Button
             className={classes.checkoutButton}
-            size="large"
             type="button"
             variant="contained"
             color="primary"
