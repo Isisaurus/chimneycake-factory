@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Toolbar, Link as LinkEl } from '@material-ui/core';
+import { Container, Toolbar } from '@material-ui/core';
 import useStyles from './styles.js';
 import { Link } from 'react-router-dom';
 
@@ -13,17 +13,17 @@ const CategoryBar = ({ categories }) => {
         variant="dense"
         className={classes.toolbarSecondary}
       >
-        {categories.map((section) => (
-          <LinkEl
+        {categories.map((category) => (
+          <Link
             color="inherit"
             noWrap
-            key={section.title}
+            key={category.title}
             variant="body2"
-            // href={section.url}
+            to={`shop/${category.slug}`}
             className={classes.toolbarLink}
           >
-            {section.name}
-          </LinkEl>
+            {category.name}
+          </Link>
         ))}
       </Toolbar>
     </Container>
