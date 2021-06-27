@@ -8,7 +8,6 @@ export default makeStyles((theme) => ({
     minHeight: '5rem',
     width: '100%',
     background: `no-repeat url('${heroImg}') center`,
-    // background: 'purple',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

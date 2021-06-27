@@ -4,27 +4,40 @@ import { Hero } from './../index';
 
 import ReactMarkdown from 'markdown-to-jsx';
 // import { withStyles } from '@material-ui/core/styles';
-import about from './../../assets/markdown/about.md';
+import aboutText from './../../assets/markdown/about.md';
+import chimneycakeText from './../../assets/markdown/chimneycake.md';
 import useStyles from './styles';
 
 const About = () => {
   const classes = useStyles();
 
-  const [text, setText] = useState({ post: null });
+  const [about, setAbout] = useState(null);
+  const [chimneyCake, setChimneyCake] = useState(null);
 
-  const readMarkdown = () => {
-    fetch(about)
+  const readMarkdownAbout = () => {
+    fetch(aboutText)
       .then((data) => {
         const about = data.text();
         return about;
       })
       .then((about) => {
-        setText({ post: about });
+        setAbout(about);
+      });
+  };
+  const readMarkdownCC = () => {
+    fetch(chimneycakeText)
+      .then((data) => {
+        const cc = data.text();
+        return cc;
+      })
+      .then((cc) => {
+        setChimneyCake(cc);
       });
   };
 
   useEffect(() => {
-    readMarkdown();
+    readMarkdownAbout();
+    readMarkdownCC();
   }, []);
 
   const options = {
@@ -33,7 +46,7 @@ const About = () => {
         component: Typography,
         props: {
           gutterBottom: true,
-          variant: 'h6',
+
           color: 'secondary',
           className: `${classes.header}`,
         },
@@ -61,15 +74,53 @@ const About = () => {
       },
     },
   };
+  const options2 = {
+    overrides: {
+      h1: {
+        component: Typography,
+        props: {
+          gutterBottom: true,
 
-  return text.post ? (
+          color: 'secondary',
+          className: `${classes.header}`,
+        },
+      },
+      p: {
+        component: Typography,
+        props: {
+          paragraph: true,
+          variant: 'body1',
+        },
+      },
+      a: {
+        component: Link,
+        props: {
+          className: `${classes.link}`,
+          target: '_blank',
+        },
+      },
+      blockquote: {
+        component: 'div',
+        props: {
+          className: `${classes.quote2}`,
+        },
+      },
+    },
+  };
+
+  return about && chimneyCake ? (
     <>
       <Hero />
       <Container>
         <ReactMarkdown
           className={classes.parent}
           options={options}
-          children={text.post}
+          children={about}
+        ></ReactMarkdown>
+        <ReactMarkdown
+          className={classes.parent}
+          options={options2}
+          children={chimneyCake}
         ></ReactMarkdown>
       </Container>
     </>

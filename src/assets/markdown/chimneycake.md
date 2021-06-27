@@ -1,5 +1,7 @@
 #The Chimney Cake[^1]
 
+> > Kürtőskalács is made from sweet, yeast dough (raised dough), of which a strip is spun and then wrapped around a truncated cone–shaped baking spit, and rolled in granulated sugar. It is roasted over charcoal while basted with melted butter, until its surface cooks to a golden-brown color.
+
 Kürtőskalács, sometimes improperly rendered as Kurtosh Kalach, is a spit cake specific to Hungarians from Transylvania, more specifically the Székelys. Originally popular in the Hungarian-speaking regions of Romania, more predominantly the Székely Land, it became popular in both, Hungary and Romania. The first written record dates back to 1679 and was found in the village of Úzdiszentpéter (now Sânpetru de Câmpie), while the first recipe appears in a manuscript cookbook dated in 1781. Earlier a festive treat, now it is part of everyday consumption. In Transylvania, a similar pastry to Kürtőskalács is Baumstriezel, originating from the Saxon communities.
 
 Kürtőskalács is made from sweet, yeast dough (raised dough), of which a strip is spun and then wrapped around a truncated cone–shaped baking spit, and rolled in granulated sugar. It is roasted over charcoal while basted with melted butter, until its surface cooks to a golden-brown color. During the baking process the sugar stuck on the kürtőskalács caramelises and forms a shiny, crispy crust. The surface of the cake can then be topped with additional ingredients such as ground walnut or powdered cinnamon.
