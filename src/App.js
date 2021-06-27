@@ -8,6 +8,8 @@ import {
   Home,
   Shop,
   Footer,
+  About,
+  Recipe,
 } from './components';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -140,6 +142,12 @@ const App = () => {
           <Switch>
             <Route exact path="/">
               <Home categories={categories} />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/recipe">
+              <Recipe />
             </Route>
             <Route exact path="/shop">
               <Shop
