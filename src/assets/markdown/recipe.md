@@ -1,8 +1,6 @@
-#Chimney Cake at home[^1]
-
 You can also bake Chimney Cakes at home. You may be surprised that it’s not hard at all.
 
-You will need canola tubes or special spits [^2] and the following ingredients:
+You will need canola tubes or special spits [^1] and the following ingredients:
 
 ##Dough:
 
@@ -33,6 +31,6 @@ You will need canola tubes or special spits [^2] and the following ingredients:
 
 5. Bake in a preheated 350F degree oven for about 20 minutes. The Chimney Cakes must be turned around halfway through the cooking time. Remove from oven and carefully slide warm pastry. Best eaten while still warm.
 
-[^1] Source: [https://turndough.com/](https://turndough.com/recipes/try-to-bake-chimney-cakes-at-home-and-send-us-a-picture/)
+[^1] Spits available: [Amazon](https://www.amazon.com/Tescoma-Traditional-Trdelnik-Prügelkrapfen-Baumstriezel/dp/B01LY4TVFY/ref=sr_1_fkmr0_1?keywords=chimney+cake+form&qid=1554148873&s=gateway&sr=8-1-fkmr0), [E-bay](https://www.ebay.com/itm/3-Pcs-Non-Stick-Dessert-Cake-Cannoli-Cone-Round-Form-Tubes-Bread-Baking-Mold-S-L/262818384077?hash=item3d313248cd:m:m3SjyvJulNg_aMkBo5SU8EQ)
 
-[^2] Spits available: [Amazon](https://www.amazon.com/Tescoma-Traditional-Trdelnik-Prügelkrapfen-Baumstriezel/dp/B01LY4TVFY/ref=sr_1_fkmr0_1?keywords=chimney+cake+form&qid=1554148873&s=gateway&sr=8-1-fkmr0), [E-bay](https://www.ebay.com/itm/3-Pcs-Non-Stick-Dessert-Cake-Cannoli-Cone-Round-Form-Tubes-Bread-Baking-Mold-S-L/262818384077?hash=item3d313248cd:m:m3SjyvJulNg_aMkBo5SU8EQ)
+Source: [https://turndough.com/](https://turndough.com/recipes/try-to-bake-chimney-cakes-at-home-and-send-us-a-picture/)

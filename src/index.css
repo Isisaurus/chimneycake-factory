@@ -33,3 +33,9 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(68, 71, 73, 0.8);
 }
+
+@media print {
+  .noPrint {
+    display: none;
+  }
+}
