@@ -1,6 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles';
 import heroImg from './../../assets/hero.jpg';
 export default makeStyles((theme) => ({
+  main: {
+    marginTop: '3rem',
+    [theme.breakpoints.down('md')]: {
+      marginTop: '1.5rem',
+    },
+  },
   hero: {
     padding: '0',
     position: 'relative',

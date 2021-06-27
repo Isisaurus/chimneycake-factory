@@ -4,6 +4,7 @@ export default makeStyles((theme) => ({
   appBar: {
     boxShadow: 'none',
     padding: '0',
+
     color: 'inherit',
     background: 'none',
   },
@@ -22,6 +23,7 @@ export default makeStyles((theme) => ({
     padding: '.5rem 0',
     borderTop: '3px solid rgba(223,209,178, .8)',
     display: 'flex',
+
     [theme.breakpoints.down('sm')]: {
       padding: '0 0',
       textAlign: 'center',

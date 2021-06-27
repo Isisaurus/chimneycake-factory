@@ -22,6 +22,7 @@ const Cart = ({
         to="/shop"
         color="secondary"
         variant="outlined"
+        size="large"
         style={{ marginTop: '1.5rem' }}
       >
         <Typography variant="subtitle1">Shop Now</Typography>
