@@ -45,7 +45,7 @@ export default makeStyles((theme) => ({
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '12px',
-      padding: '.5rem .8rem',
+      padding: '.5rem .6rem',
     },
   },
   active: {

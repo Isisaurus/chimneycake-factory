@@ -21,7 +21,7 @@ const Navbar = ({ totalItems }) => {
   const location = useLocation();
 
   return (
-    <>
+    <Container>
       <AppBar
         position="static"
         color="default"
@@ -91,7 +91,7 @@ const Navbar = ({ totalItems }) => {
           </AppLink>
         </Toolbar>
       </AppBar>
-    </>
+    </Container>
   );
 };
 
