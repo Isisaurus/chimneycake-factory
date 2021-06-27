@@ -156,7 +156,7 @@ const App = () => {
               />
             </Route>
             <Route exact path="/products/:id">
-              <ProductDetails />
+              <ProductDetails handleAddToCart={handleAddToCart} />
             </Route>
             <Route exact path="/cart">
               <Cart
