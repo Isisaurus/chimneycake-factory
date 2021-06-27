@@ -8,6 +8,8 @@ import {
 import { loadStripe } from '@stripe/stripe-js';
 import Review from './Review';
 
+import { Error } from './../index';
+
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 const PaymentForm = ({
   checkoutToken,
@@ -27,7 +29,8 @@ const PaymentForm = ({
       card: cardElement,
     });
     if (error) {
-      console.log(error);
+      <Error error={error} />;
+      // ERROR PAGE: card number missing or wrong
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,
@@ -71,7 +74,7 @@ const PaymentForm = ({
               <CardElement />
               <br /> <br />
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Button variant="outlined" onClick={backStep}>
+                <Button variant="outlined" onClick={backStep} disableElevation>
                   Back
                 </Button>
                 <Button
@@ -79,6 +82,7 @@ const PaymentForm = ({
                   type="submit"
                   disabled={!stripe}
                   color="primary"
+                  disableElevation
                 >
                   Pay {checkoutToken.live.subtotal.formatted_with_symbol}
                 </Button>

@@ -60,12 +60,14 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   };
 
   let Confirmation = () =>
-    order.customer ? (
+    order.customer && isFinished ? (
       <>
         <div>
           <Typography variant="h5">
-            Thank you for your purchase, {order.customer.firstname}
-            {order.customer.lastname}
+            Thank you for your purchase,{' '}
+            <span style={{ textTransform: 'capitalize' }}>
+              {order.customer.firstname}.
+            </span>
           </Typography>
           <Divider className={classes.divider} />
           <Typography variant="subtitle2">
@@ -73,18 +75,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
           </Typography>
         </div>
         <br />
-        <Button component={Link} to="shop" variant="outlined" type="button">
-          Back to Home
-        </Button>
-      </>
-    ) : isFinished ? (
-      <>
-        <div>
-          <Typography variant="h5">Thank you for your purchase.</Typography>
-          <Divider className={classes.divider} />
-        </div>
-        <br />
-        <Button component={Link} to="shop" variant="outlined" type="button">
+        <Button component={Link} to="/" variant="outlined" type="button">
           Back to Home
         </Button>
       </>
@@ -97,8 +88,8 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   if (error) {
     Confirmation = () => (
       <>
-        <Typography variant="h5">Sorry! Something went wrong!</Typography>
-        <Typography variant="h5">Error: {error}</Typography>
+        <Typography variant="h6">Sorry! Something went wrong!</Typography>
+        <Typography variant="h6">Error: {error}</Typography>
         <br />
         <Button component={Link} to="shop" variant="outlined" type="button">
           Back to Home
@@ -124,7 +115,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     <>
       <CssBaseline />
       <div className={classes.toolbar} />
-      <main className={classes.layout}>
+      <main className={classes.layout} style={{ minHeight: '50vh' }}>
         <Paper className={classes.paper}>
           <Typography variant="h4" align="center">
             Checkout
