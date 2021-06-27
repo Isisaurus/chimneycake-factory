@@ -44,4 +44,22 @@ export default makeStyles((theme) => ({
   button: {
     alignSelf: 'flex-start',
   },
+  related: {
+    marginTop: '3rem',
+    marginBottom: ' 3rem',
+  },
+  relatedItem: {
+    textDecoration: 'none',
+  },
+  relatedCard: {
+    border: 'none',
+    boxShadow: 'none',
+    '&:hover': {
+      background: 'rgba(223,209,178, .4)',
+    },
+  },
+  relatedImg: {
+    height: '10rem',
+    width: '100%',
+  },
 }));

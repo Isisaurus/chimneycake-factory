@@ -8,6 +8,10 @@ import {
   Typography,
   Button,
   Link as LinkEl,
+  Card,
+  CardMedia,
+  CardContent,
+  Divider,
 } from '@material-ui/core';
 import { Hero } from './../../index';
 import { AddShoppingCart } from '@material-ui/icons';
@@ -22,9 +26,6 @@ const ProductDetails = ({ handleAddToCart }) => {
 
   const getProductById = async (id) => {
     const res = await commerce.products.retrieve(id);
-    // console.log(res);
-    // name, description, categories
-    // img: media.source
     setProduct(res);
   };
 
@@ -74,7 +75,7 @@ const ProductDetails = ({ handleAddToCart }) => {
                     to={`/shop/${cat.slug}`}
                     className={classes.link}
                   >
-                    #{cat.name}
+                    <Typography variant="caption">#{cat.name}</Typography>
                   </LinkEl>
                 ))}
               </div>
@@ -95,6 +96,52 @@ const ProductDetails = ({ handleAddToCart }) => {
               </Button>
             </div>
           </Grid>
+        </Grid>
+      </Container>
+      <Container>
+        <Divider
+          style={{
+            marginTop: '2.5rem',
+            marginBottom: '2.5rem',
+            height: '3px',
+          }}
+          light
+          variant="fullWidth"
+        />
+        <Typography
+          gutterBottom
+          variant="h6"
+          color="secondary"
+          style={{ marginBottom: '2.5rem' }}
+        >
+          Related Products
+        </Typography>
+        <Grid container spacing={2} className={classes.related}>
+          {product.related_products.map((item) => (
+            <Grid
+              item
+              key={item.id}
+              className={classes.relatedItem}
+              xs={6}
+              sm={4}
+              md={3}
+              component={Link}
+              to={`/products/${item.id}`}
+            >
+              <Card className={classes.relatedCard}>
+                <CardMedia
+                  title={item.name}
+                  image={item.media.source}
+                  className={classes.relatedImg}
+                />
+                <CardContent className={classes.relatedContent}>
+                  <Typography variant="body2" color="textSecondary">
+                    {item.name}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
       </Container>
     </Container>
