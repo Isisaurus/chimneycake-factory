@@ -30,7 +30,6 @@ const PaymentForm = ({
     });
     if (error) {
       <Error error={error} />;
-      // ERROR PAGE: card number missing or wrong
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,

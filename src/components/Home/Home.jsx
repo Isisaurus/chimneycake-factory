@@ -12,10 +12,11 @@ import useStyles from './styles';
 import logo from './../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import Map from './Map/Map';
+import { Loading } from './../index';
 
 const Home = ({ categories }) => {
   const classes = useStyles();
-  if (!categories) return 'Loading...';
+  if (!categories) return <Loading />;
   return (
     <Container className={classes.main} component="main">
       <Container className={classes.hero}>

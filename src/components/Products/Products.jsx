@@ -5,6 +5,7 @@ import { commerce } from '../../lib/commerce';
 
 import Product from './Product/Product';
 import useStyles from './styles';
+import { Loading } from './../index';
 
 const Products = ({ products, onAddToCart, slug }) => {
   const classes = useStyles();
@@ -27,7 +28,7 @@ const Products = ({ products, onAddToCart, slug }) => {
     // eslint-disable-next-line
   }, [slug, products]);
 
-  if (!filteredProducts) return 'Loading...';
+  if (!filteredProducts) return <Loading />;
   return (
     <Container className={classes.content}>
       <Grid container spacing={4} className={classes.grid}>

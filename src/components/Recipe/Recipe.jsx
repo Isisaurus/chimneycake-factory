@@ -3,7 +3,7 @@ import { Container, Typography, Link, Button, Box } from '@material-ui/core';
 import useStyles from './styles';
 import ReactMarkdown from 'markdown-to-jsx';
 import recipe from './../../assets/markdown/recipe.md';
-import { Hero } from './../index';
+import { Hero, Loading } from './../index';
 import PrintIcon from '@material-ui/icons/Print';
 
 const Recipe = () => {
@@ -99,7 +99,7 @@ const Recipe = () => {
       <Box className={classes.img}></Box>
     </Container>
   ) : (
-    'Loading...'
+    <Loading />
   );
 };
 

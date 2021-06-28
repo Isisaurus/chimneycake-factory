@@ -13,7 +13,7 @@ import {
   CardContent,
   Divider,
 } from '@material-ui/core';
-import { Hero } from './../../index';
+import { Hero, Loading } from './../../index';
 import { AddShoppingCart } from '@material-ui/icons';
 
 import useStyles from './styles';
@@ -33,7 +33,7 @@ const ProductDetails = ({ handleAddToCart }) => {
     getProductById(id);
   }, [id]);
 
-  if (!product) return 'Loading...';
+  if (!product) return <Loading />;
 
   return (
     <Container className={classes.container}>

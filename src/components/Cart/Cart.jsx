@@ -3,6 +3,7 @@ import { Container, Typography, Button, Grid } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import useStyles from './styles';
 import CartItem from './CartItem/CartItem';
+import { Loading } from './../index';
 
 const Cart = ({
   cart,
@@ -74,7 +75,7 @@ const Cart = ({
     </>
   );
 
-  if (!cart) return 'Loading...';
+  if (!cart) return <Loading />;
   return (
     <Container style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>
       <Typography className={classes.title} variant="h5" gutterBottom>

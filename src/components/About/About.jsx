@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Typography, Link } from '@material-ui/core';
-import { Hero } from './../index';
+import { Hero, Loading } from './../index';
 
 import ReactMarkdown from 'markdown-to-jsx';
 // import { withStyles } from '@material-ui/core/styles';
@@ -125,7 +125,7 @@ const About = () => {
       </Container>
     </>
   ) : (
-    'Loading...'
+    <Loading />
   );
 };
 

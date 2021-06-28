@@ -13,6 +13,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import FormInput from './CustomTextField';
 
 import { commerce } from '../../lib/commerce';
+import { Loading } from './../index';
 
 const AddressForm = ({ checkoutToken, next }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -93,7 +94,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   const methods = useForm();
 
-  if (!checkoutToken) return 'Loading...';
+  if (!checkoutToken) return <Loading />;
   return (
     <>
       <Typography variant="h6" gutterBottom>

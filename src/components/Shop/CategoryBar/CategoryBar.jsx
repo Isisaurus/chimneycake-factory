@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Toolbar, Link as LinkEl } from '@material-ui/core';
 import useStyles from './styles.js';
 import { Link } from 'react-router-dom';
+import { Loading } from './../../index';
 
 const CategoryBar = ({ categories, slug }) => {
   const classes = useStyles();
@@ -54,7 +55,7 @@ const CategoryBar = ({ categories, slug }) => {
       </Toolbar>
     </Container>
   ) : (
-    'Loading...'
+    <Loading />
   );
 };
 

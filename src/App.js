@@ -12,6 +12,8 @@ import {
   Recipe,
 } from './components';
 
+import NotFoundPage from './components/NotFoundPage';
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core';
@@ -182,6 +184,7 @@ const App = () => {
                 error={errorMessage}
               />
             </Route>
+            <Route component={NotFoundPage} />
           </Switch>
           <Footer />
         </div>
