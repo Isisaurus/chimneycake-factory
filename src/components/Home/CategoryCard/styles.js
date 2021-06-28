@@ -29,6 +29,11 @@ export default makeStyles(() => ({
     padding: '1em 1.5em',
     lineHeight: '1.5',
     width: '100%',
+    transition: 'all .2s ease',
+    '&:hover': {
+      transition: 'all .2s ease',
+      background: 'rgba(223,209,178, .6)',
+    },
   },
   description: {
     paddingTop: '1rem',
