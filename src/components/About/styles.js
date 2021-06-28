@@ -4,7 +4,6 @@ import img from './../../assets/textimg.jpg';
 export default makeStyles((theme) => ({
   parent: {
     columnCount: '2',
-    columnFill: 'auto',
     columnGap: '2.5rem',
 
     [theme.breakpoints.down('sm')]: {
