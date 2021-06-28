@@ -6,17 +6,23 @@ import { commerce } from '../../lib/commerce';
 import Product from './Product/Product';
 import useStyles from './styles';
 import { Loading } from './../index';
+import NotFoundPage from './../NotFoundPage';
 
 const Products = ({ products, onAddToCart, slug }) => {
   const classes = useStyles();
 
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [err, setErr] = useState(null);
 
   const handleCategory = async () => {
-    const res = await commerce.products.list({
-      category_slug: [slug],
-    });
-    setFilteredProducts(res.data);
+    try {
+      const res = await commerce.products.list({
+        category_slug: [slug],
+      });
+      setFilteredProducts(res.data);
+    } catch (err) {
+      setErr(err);
+    }
   };
 
   useEffect(() => {
@@ -28,6 +34,8 @@ const Products = ({ products, onAddToCart, slug }) => {
     // eslint-disable-next-line
   }, [slug, products]);
 
+  if (err)
+    return <NotFoundPage message="There is no such caregory in our shop." />;
   if (!filteredProducts) return <Loading />;
   return (
     <Container className={classes.content}>

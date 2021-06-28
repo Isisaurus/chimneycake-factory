@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ message, redirect, locationName }) => {
   return (
     <Container
       style={{
@@ -12,7 +12,7 @@ const NotFoundPage = () => {
     >
       <Container>
         <Typography variant="h6" color="secondary" gutterBottom>
-          Sorry! This page doesn't exist.
+          {message ? `Sorry! ${message}` : `Sorry! This page doesn't exist.`}
         </Typography>
         <Typography variant="overline" color="textSecondary" gutterBottom>
           404. Page not found.
@@ -24,10 +24,10 @@ const NotFoundPage = () => {
           size="large"
           color="secondary"
           component={Link}
-          to="/"
+          to={redirect ? `${redirect}` : '/'}
           disableElevation
         >
-          Back to Home Page
+          {locationName ? `Back to ${locationName}` : `Back to Home Page`}
         </Button>
       </Container>
     </Container>
