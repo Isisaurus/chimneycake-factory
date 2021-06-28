@@ -15,6 +15,7 @@ import {
 } from '@material-ui/core';
 import { Hero, Loading } from './../../index';
 import { AddShoppingCart } from '@material-ui/icons';
+import NotFoundPage from './../../NotFoundPage';
 
 import useStyles from './styles';
 
@@ -23,15 +24,29 @@ const ProductDetails = ({ handleAddToCart }) => {
   const { id } = useParams();
 
   const [product, setProduct] = useState();
+  const [err, setErr] = useState(null);
 
   const getProductById = async (id) => {
-    const res = await commerce.products.retrieve(id);
-    setProduct(res);
+    try {
+      const res = await commerce.products.retrieve(id);
+      setProduct(res);
+    } catch (err) {
+      if (err) setErr(err);
+    }
   };
 
   useEffect(() => {
     getProductById(id);
   }, [id]);
+
+  if (err)
+    return (
+      <NotFoundPage
+        message="There is no such product in our shop."
+        redirect="/shop"
+        locationName="Shop"
+      />
+    );
 
   if (!product) return <Loading />;
 
