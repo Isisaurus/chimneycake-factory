@@ -13,6 +13,9 @@ export default makeStyles((theme) => ({
     height: '80vh',
     maxHeight: '40rem',
     background: `url(${heroImg}) no-repeat center`,
+    [theme.breakpoints.down('xs')]: {
+      height: '90vh',
+    },
   },
   introGrid: {
     position: 'absolute',
@@ -76,7 +79,7 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-around',
     color: '#444749',
     [theme.breakpoints.down('sm')]: {
-      padding: '1rem',
+      padding: '.5em',
       marginTop: '2rem',
       marginBottom: '2rem',
       alignItems: 'center',
@@ -99,6 +102,7 @@ export default makeStyles((theme) => ({
     listStyle: 'none',
     [theme.breakpoints.down('xs')]: {
       padding: '0',
+      fontSize: '1rem',
     },
   },
   li: {
