@@ -1,5 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 import heroImg from './../../assets/hero.jpg';
+import heroImgMedium from './../../assets/hero-medium.jpg';
+import heroImgSmall from './../../assets/hero-small.jpg';
+
 export default makeStyles((theme) => ({
   main: {
     marginTop: '3rem',
@@ -17,6 +20,18 @@ export default makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
+    [theme.breakpoints.down('md')]: {
+      backgroundImage: `linear-gradient(to top right, rgba(0,0,0,0.6) 0%, rgba(0,0,0, .3) 100%), url(${heroImgMedium})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    },
+    [theme.breakpoints.down('sm')]: {
+      backgroundImage: `linear-gradient(to top right, rgba(0,0,0,0.6) 0%, rgba(0,0,0, .3) 100%), url(${heroImgSmall})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    },
     [theme.breakpoints.down('xs')]: {
       height: '90vh',
     },
