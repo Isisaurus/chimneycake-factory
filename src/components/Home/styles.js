@@ -12,7 +12,11 @@ export default makeStyles((theme) => ({
     position: 'relative',
     height: '80vh',
     maxHeight: '40rem',
-    background: `url(${heroImg}) no-repeat center`,
+    // background: `url(${heroImg}) no-repeat center`,
+    backgroundImage: `linear-gradient(to top right, rgba(0,0,0,0.6) 0%, rgba(0,0,0, .3) 100%), url(${heroImg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
     [theme.breakpoints.down('xs')]: {
       height: '90vh',
     },
