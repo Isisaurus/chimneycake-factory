@@ -58,7 +58,7 @@ const Footer = () => {
           <br />
           Designed and developed by
           <a
-            href="https://www.cchshop.nl/"
+            href="https://diana-vitanyi.netlify.app/"
             target="_blank"
             rel="noreferrer"
             className={classes.link}
